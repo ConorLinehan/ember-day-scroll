@@ -2,5 +2,5 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-day-scroll-calander'
+  name: 'ember-day-scroll-calendar'
 };

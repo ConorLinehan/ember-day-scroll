@@ -1,5 +1,5 @@
 {
-  "name": "ember-day-scroll-calander",
+  "name": "ember-day-scroll-calendar",
   "dependencies": {
     "ember": "~2.4.1",
     "ember-cli-shims": "0.1.0",
