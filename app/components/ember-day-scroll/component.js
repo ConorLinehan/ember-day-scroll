@@ -1,0 +1,1 @@
+export { default } from 'ember-day-scroll-calendar/components/ember-day-scroll/component';
