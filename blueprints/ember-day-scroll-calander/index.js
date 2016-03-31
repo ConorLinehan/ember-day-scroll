@@ -7,13 +7,9 @@ module.exports = {
     var self = this;
     return this.addAddonsToProject({
       packages: [
-        { name: 'smoke-and-mirrors'}
+        { name: 'smoke-and-mirrors'},
+        { name: 'ember-moment'}
       ]
-    })
-    .then(function(){
-      return self.addPackagesToProject([
-        { name: 'moment', target: '2.0.0'}
-      ]);
     });
   }
 };
