@@ -9,6 +9,7 @@ moduleForComponent('month-component', 'Integration | Component | month component
 });
 
 test('it renders month table', function(assert) {
+  const month = moment();
   this.set('month', month);
   this.render(hbs`{{month-component month=month}}`);
 
