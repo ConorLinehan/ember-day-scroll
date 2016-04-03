@@ -1,11 +1,23 @@
 <thead>
-  <tr> <!-- Month -->
+  <tr>
     <th>
-      {{moment-format month 'MMM YYYY'}}      
+      {{moment-format month 'MMM YYYY'}}
     </th>
   </tr>
 </thead>
 
-<tbody> <!-- Days -->
-
+<tbody>
+  {{#each weeks as |week|}}
+    <tr>
+    {{#each week as |day i|}}
+      {{#if day}}
+        <td class="day">
+          {{moment-format day 'D'}}
+        </td>
+      {{else}}
+        <td> </td>
+      {{/if}}
+    {{/each}}
+    </tr>
+  {{/each}}
 </tbody>
