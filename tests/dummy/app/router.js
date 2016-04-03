@@ -6,6 +6,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('month');
+  this.route('day-scroll');
 });
 
 export default Router;

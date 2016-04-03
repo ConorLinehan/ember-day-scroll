@@ -1,0 +1,11 @@
+
+<div style="height: 150px;">
+  {{#vertical-collection
+    content=model.content
+    defaultHeight=130
+    alwaysUseDefaultHeight=true
+    debugMode=true as |month|
+  }}
+    {{month-component month=month}}
+  {{/vertical-collection}}
+</div>
