@@ -1,24 +1,48 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
+import PageObject from 'dummy/tests/page-object';
+import wait from 'ember-test-helpers/wait';
+import Ember from 'ember';
 
-moduleForComponent('ember-day-scroll', 'Integration | Component | ember day scroll', {
-  integration: true
+const {
+  collection,
+} = PageObject;
+
+const {
+  run
+} = Ember;
+
+const page = PageObject.create({
+  months: collection({
+    itemScope: 'vertical-item'
+  })
 });
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+moduleForComponent('ember-day-scroll', 'Integration | Component | ember day scroll', {
+  integration: true,
 
-  this.render(hbs`{{ember-day-scroll}}`);
+  beforeEach() {
+    page.setContext(this);
+  },
 
-  assert.equal(this.$().text().trim(), '');
+  afterEach() {
+    page.removeContext();
+  }
+});
 
-  // Template block usage:
-  this.render(hbs`
-    {{#ember-day-scroll}}
-      template block text
-    {{/ember-day-scroll}}
-  `);
+test('it renders intial state', function(assert) {
+  page.render(hbs`{{ember-day-scroll}}`);
+  assert.equal(page.months().count, 10);
+});
 
-  assert.equal(this.$().text().trim(), 'template block text');
+test('it loads above', function(assert) {
+  page.render(hbs`{{ember-day-scroll}}`);
+  return run(() =>{
+    return wait(() =>{
+      run(() =>{
+        this.$('div').scrollTop = 0;
+      });
+      assert.equal(page.months().count, 10);
+    });
+  });
 });

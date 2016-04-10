@@ -1,0 +1,16 @@
+<div class="day-scroll" style="height: 150px;">
+  {{log model.months}}
+  {{#vertical-collection
+    content=model.months
+    defaultHeight=130
+    scrollPosition=intialScrollPosition
+    alwaysUseDefaultHeight=true
+    useContentProxy=false
+    debugMode=true
+    firstReached="loadAbove"
+    lastReached="loadBelow"
+    as |month index|
+  }}
+    {{month-component month=month}}
+  {{/vertical-collection}}
+</div>
