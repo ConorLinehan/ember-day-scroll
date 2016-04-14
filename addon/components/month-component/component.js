@@ -30,8 +30,7 @@ export default Ember.Component.extend({
     }
 
     for (let i = 1; i <= daysInMonth; i++) {
-      const slot = moment(month).date(i);
-      slots.push(slot);
+      slots.push(i);
     }
 
     return slots;
