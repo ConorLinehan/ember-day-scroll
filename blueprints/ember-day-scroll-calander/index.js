@@ -4,10 +4,11 @@ module.exports = {
   },
 
   afterInstall: function(options) {
+    var self = this;
     return this.addAddonsToProject({
       packages: [
-        { name: 'ember-collection'},
-        { name: 'ember-moment', target: '6.0.0' }
+        { name: 'smoke-and-mirrors'},
+        { name: 'ember-moment'}
       ]
     });
   }

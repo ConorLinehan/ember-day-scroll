@@ -1,0 +1,23 @@
+<thead>
+  <tr>
+    <th>
+      {{moment-format month 'MMM YYYY'}}
+    </th>
+  </tr>
+</thead>
+
+<tbody>
+  {{#each weeks as |week|}}
+    <tr>
+    {{#each week as |day i|}}
+      {{#if day}}
+        <td class="day" {{action attrs.selectedDay day}}>
+          {{day}}
+        </td>
+      {{else}}
+        <td> </td>
+      {{/if}}
+    {{/each}}
+    </tr>
+  {{/each}}
+</tbody>
