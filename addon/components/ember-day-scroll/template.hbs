@@ -11,6 +11,6 @@
     lastReached="loadBelow"
     as |month index|
   }}
-    {{month-component month=month}}
+    {{month-component month=month selectedDay=(action 'selectedDay')}}
   {{/vertical-collection}}
 </div>

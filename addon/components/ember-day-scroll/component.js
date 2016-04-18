@@ -42,13 +42,17 @@ export default Ember.Component.extend({
     },
 
     loadBelow() {
-      run.debounce(this, () =>{``
+      run.debounce(this, () =>{
         let last = this.get('model.months')[9];
         let endMonth = last.add(10, 'months');
         let months = this._genMonths(endMonth, 10);
-        this.set('model.months', this.get('months').concat(months));
+        this.set('model.months', this.get('model.months').concat(months));
       }, this.get('debounceTime'));
     },
+
+    selectedDay(day) {
+      console.log(day);
+    }
 
   }
 });
